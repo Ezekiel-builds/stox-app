@@ -1,5 +1,5 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,SOFT,WONK,wght@0,9..144,0..100,1,100..900;1,9..144,0..100,1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 /* Icons */
 @import url('https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
@@ -7,7 +7,7 @@
 @import 'tailwindcss';
 
 :root {
-   /* Brand */
+  /* Brand */
   --color-primary: #10B981;
   --color-primary-dark: #059669;
   --color-primary-light: #DCEBE2;
@@ -43,10 +43,16 @@
   /* Shape */
   --radius-card: 18px;
   --radius-button: 12px;
-
 }
 
 body {
   background-color: var(--color-background);
   font-family: var(--font-body)
+}
+
+.hero__header {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 72, "SOFT" 0, "WONK" 1;
 }
