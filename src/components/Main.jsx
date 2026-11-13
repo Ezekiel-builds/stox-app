@@ -7,7 +7,7 @@ export default function Main() {
         <main>
             <Header/>
 
-            <div className="hero flex flex-col justify-center items-center gap-6 my-30">
+            <section className="hero flex flex-col justify-center items-center gap-6 my-30">
 {/*                 <span className="w-50 h-50"></span> */}
                 <h1 className="hero__header max-w-[820px] text-[5rem] text-center">
                     Your <span className="italic font-light">inventory. Your space.</span> Your control.
@@ -42,7 +42,21 @@ export default function Main() {
                     className="w-full object-contain"
                     />
                 </div>
-            </div>
+            </section>
+
+            <section className="philosophy flex gap-4 flex-col justify-center items-center bg-(--color-surface) p-10">
+                <span className="eyebrow__text text-(--color-primary-dark) font-(--font-heading) text-sm">
+                    THE STOX DESIGN PHILOSOPHY
+                </span>
+
+                <h2 className="philosophy__text text-[2rem] text-center ">
+                    “Most inventory software is built like cold accounting spreadsheets. We built STox like an exquisitely crafted merchant workshop.”
+                </h2>
+            </section>
+
+            <section className="features">
+                
+            </section>
         </main>
     )
 }
