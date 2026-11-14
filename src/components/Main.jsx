@@ -55,7 +55,84 @@ export default function Main() {
             </section>
 
             <section className="features">
-                
+                <div className="features__header">
+                    <span className="">
+                        CORE PLAFORM FEATURES
+                    </span>
+
+                    <h2 className="text-[2rem]">
+                        Everything your inventory needs.
+                    </h2>
+
+                    <span className="text-(--color-text-muted)">
+                        One organised space to manage evry product you sell.
+                    </span>
+                </div>
+
+                <div className="features__cards">
+
+                    <div className="feature__card">
+                        <div className="card__header">
+                            <span className="">
+                                01
+                            </span>
+
+                            <p className="">
+                                Product organization
+                            </p>
+                        </div>
+
+                        <div className="">
+                            <span className="">
+                                Keep product information organized in one place
+                            </span>
+
+                            <div className="">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="feature__card">
+                        <div className="">
+                            <span>
+                                02
+                            </span>
+
+                            <p className="">
+                                Inventory Management
+                            </p>
+                        </div>
+
+                        <div className="">
+                            <span className="">
+                                Add products and manage their available quantities
+                            </span>
+
+                            <div className="">
+                                <p className="">
+                                    Batch #204 Quantity
+                                </p>
+
+                                <div className="">
+                                    <i className="fi fi-rr-plus-small"></i>
+                                    <span>84</span>
+                                    <i className="fi fi-rr-minus-small"></i>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <div className="feature__card">
+
+                    </div>
+                    <div className="feature__card">
+
+                    </div>
+                    <div className="feature__card">
+
+                    </div>
+                </div>
             </section>
         </main>
     )

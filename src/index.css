@@ -69,4 +69,5 @@ h1, h2, h3, h4, h5, h6 {
   /* font-weight: 400; */
   font-optical-sizing: none;
   font-variation-settings: "opsz" 72, "SOFT" 0, "WONK" 1;
+  color: var(--color-text);
 }
