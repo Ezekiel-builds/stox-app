@@ -6,27 +6,31 @@
 
 @import 'tailwindcss';
 
-:root {
+@theme {
   /* Brand */
   --color-primary: #10B981;
   --color-primary-dark: #059669;
   --color-primary-light: #DCEBE2;
 
   /* Backgrounds */
-  --color-background: #E5E3DC;
+  --color-background: #F7F6F2;
   --color-surface: #FFFFFF;
   --color-surface-muted: #F0F0EB;
+  --color-numbers-background: rgba(220, 235, 226, 0.6);
 
   /* Text */
   --color-text: #151515;
   --color-text-muted: #777777;
   --color-text-light: #A3A3A3;
+  --color-numbers: #065F46;
+  --color-text-label: #10B981;
 
   /* Fonts */
   --font-heading: 'Fraunces', serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 
   /* Borders */
+  --color-background-main: #E5E3DC;
   --color-border: #E5E5DF;
   --color-border-muted: rgba(229, 227, 220, 0.8);
 

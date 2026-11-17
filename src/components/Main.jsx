@@ -4,6 +4,7 @@ import PhilosophySection from './PhilosophySection'
 import FeaturesSection from './FeaturesSection'
 import TransformationSection from './TransformationSection'
 import OnboardingSection from './OnboardingSection'
+import Preview from './Preview'
 
 export default function Main() {
     return (
@@ -14,6 +15,7 @@ export default function Main() {
             <FeaturesSection />
             <TransformationSection />
             <OnboardingSection />
+            <Preview />
         </main>
     )
 }

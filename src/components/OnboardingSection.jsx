@@ -15,7 +15,7 @@ const steps = [
         number: '03',
         title: 'Monitor your stock',
         description: 'Check availability and identify products running low.',
-        note: 'Zero stockouts guaranteed',
+        note: 'Stay ahead of stockouts',
     },
 ]
 
