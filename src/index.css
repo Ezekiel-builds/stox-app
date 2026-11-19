@@ -11,12 +11,15 @@
   --color-primary: #10B981;
   --color-primary-dark: #059669;
   --color-primary-light: #DCEBE2;
+  --color-primary-brown: #92400E;
 
   /* Backgrounds */
   --color-background: #F7F6F2;
   --color-surface: #FFFFFF;
   --color-surface-muted: #F0F0EB;
+  --color-surface-grey: #FAF8F5;
   --color-numbers-background: rgba(220, 235, 226, 0.6);
+  --color-box-surface: rgba(255, 251, 235, 0.7);
 
   /* Text */
   --color-text: #151515;
@@ -33,6 +36,7 @@
   --color-background-main: #E5E3DC;
   --color-border: #E5E5DF;
   --color-border-muted: rgba(229, 227, 220, 0.8);
+  --color-border-box: rgba(253, 230, 138, 0.8);
 
   /* Status */
   --color-success: #16A34A;
@@ -44,9 +48,11 @@
   --shadow-card: 0 8px 30px rgba(21, 21, 21, 0.06);
   --shadow-hover: 0 14px 40px rgba(21, 21, 21, 0.10);
 
-  /* Shape */
-  --radius-card: 18px;
-  --radius-button: 12px;
+  /* Labels */
+  --color-primary-label: #FFF1F2;
+  --color-secondary-label: #D1FAE5;
+  --color-label-muted: rgba(12, 12, 12, 3%);
+  --color-label-mute: rgba(16, 185, 129, 5%);
 }
 
 body {
@@ -62,8 +68,7 @@ body {
 }
 
 span {
-  font-family: var(--font-heading);
-  font-weight: 400;
+  font-family: var(--font-body);
   font-optical-sizing: none;
   font-variation-settings: "opsz" 72, "SOFT" 0, "WONK" 1;
 }
@@ -74,4 +79,11 @@ h1, h2, h3, h4, h5, h6 {
   font-optical-sizing: none;
   font-variation-settings: "opsz" 72, "SOFT" 0, "WONK" 1;
   color: var(--color-text);
+}
+
+.feature__eyebrow {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  font-family: var(--font-body);
 }
