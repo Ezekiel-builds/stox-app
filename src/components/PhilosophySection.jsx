@@ -1,6 +1,6 @@
 export default function PhilosophySection() {
     return (
-        <section className="philosophy flex gap-4 flex-col justify-center items-center bg-surface p-8 md:p-20">
+        <section className="philosophy flex flex-col items-center justify-center gap-5 bg-surface p-8 md:gap-6 md:p-20">
             <span className="eyebrow__text text-primary-dark font-(--font-heading) text-sm">
                 THE STOX DESIGN PHILOSOPHY
             </span>

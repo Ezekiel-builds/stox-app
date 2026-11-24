@@ -106,9 +106,9 @@ function FeatureCard({ feature }) {
 
 export default function FeaturesSection() {
     return (
-        <section id="features" className="features flex justify-center flex-col mt-16 md:mt-30">
-            <div className="features__header text-center md:text-left px-5">
-                <span className="text-sm text-primary-dark p-5">CORE PLATFORM FEATURES</span>
+        <section id="features" className="features flex justify-center flex-col">
+            <div className="features__header flex flex-col gap-3 px-5 text-center md:text-left">
+                <span className="text-sm text-primary-dark">CORE PLATFORM FEATURES</span>
                 <h2 className="text-3xl md:text-[2.5rem] text-text leading-tight">Everything your inventory needs.</h2>
                 <span className="text-(--color-text-muted) text-base">One organised space to manage every product you sell.</span>
             </div>

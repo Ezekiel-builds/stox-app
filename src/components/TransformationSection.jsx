@@ -14,8 +14,8 @@ const afterItems = [
 
 export default function TransformationSection() {
     return (
-        <section className="transformation mt-16 md:mt-30 bg-surface">
-            <div className="text-center p-6 md:p-12">
+        <section className="transformation bg-surface">
+            <div className="flex flex-col items-center gap-3 px-4 py-10 text-center md:px-12 md:py-16">
                 <span className="text-sm text-primary-dark">
                     THE TRANSORMATION
                 </span>
@@ -25,7 +25,7 @@ export default function TransformationSection() {
                 </h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 px-4 md:px-10 pb-12 md:pb-20">
+            <div className="grid grid-cols-1 gap-6 px-4 pb-12 md:gap-8 md:px-10 md:pb-20 lg:grid-cols-2">
                 
                     <div className="bg-surface-grey p-4 md:p-5 rounded-3xl overflow-hidden border border-border-muted">
                         <span className="text-sm bg-primary-label border border-[#FECDD3] text-[#BE123C] font-medium px-2 py-1 rounded-[999px]">BEFORE STOX</span>

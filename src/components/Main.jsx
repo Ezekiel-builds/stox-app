@@ -12,14 +12,16 @@ export default function Main() {
     return (
         <main>
             <Header />
-            <HeroSection />
-            <PhilosophySection />
-            <FeaturesSection />
-            <TransformationSection />
-            <OnboardingSection />
-            <Preview />
-            <Faq/>
-            <Footer/>
+            <div className="flex flex-col gap-20 md:gap-30">
+                <HeroSection />
+                <PhilosophySection />
+                <FeaturesSection />
+                <TransformationSection />
+                <OnboardingSection />
+                <Preview />
+                <Faq />
+                <Footer />
+            </div>
         </main>
     )
 }

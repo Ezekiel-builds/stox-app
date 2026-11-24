@@ -2,8 +2,8 @@ import DashBoardPreview from '../assets/Dashboard-preview.png'
 
 export default function Preview() {
     return (
-        <div id="system-preview" className="flex flex-col justify-center items-center bg-surface px-4">
-            <div className="text-center mt-16 md:mt-30">
+        <div id="system-preview" className="flex flex-col items-center justify-center gap-10 bg-surface px-4 py-20 md:gap-16">
+            <div className="flex flex-col items-center gap-3 text-center">
                 <span className="text-primary-dark font-(--font-heading) text-sm">
                     SYSTEM PREVIEW
                 </span>
@@ -17,7 +17,7 @@ export default function Preview() {
                 </span>
             </div>
 
-            <div className="w-full max-w-3xl mt-10 md:mt-16">
+            <div className="w-full max-w-3xl">
                 <img src={DashBoardPreview} alt="Dashboard preview" className="w-full" />
             </div>
         </div>

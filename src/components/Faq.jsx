@@ -38,9 +38,9 @@ export default function Faq() {
     const [isOpenIndex, setIsOpenIndex] = useState(null);
 
     return (
-        <div id="FAQ" className="px-4 md:px-16 py-16 md:py-30">
+        <div id="FAQ" className="px-4 md:px-16">
 
-            <div className="text-center">
+            <div className="mb-10 flex flex-col items-center gap-3 text-center md:mb-14">
                 <span className="text-primary-dark font-(--font-heading) text-sm">FREQUENTLY ASKED QUESTIONS</span>
                 <h2 className="text-[2rem]">Everything you need to know.</h2>
                 <span className="text-base text-text-muted">
@@ -48,8 +48,9 @@ export default function Faq() {
                 </span>
             </div>
     
+          <div className="flex flex-col gap-4 md:gap-5">
           {faqs.map(faq => (
-            <div key={faq.id} className="bg-surface my-3 md:m-5 px-4 border border-border-muted rounded-2xl">
+            <div key={faq.id} className="rounded-2xl border border-border-muted bg-surface px-4">
                 <button
                     type="button"
                     className="w-full flex justify-between items-center gap-3 py-5 text-left"
@@ -68,6 +69,7 @@ export default function Faq() {
                 )}
             </div>
           ))}
+          </div>
         </div>
     )
 }

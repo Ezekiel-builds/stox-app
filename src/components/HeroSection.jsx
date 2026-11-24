@@ -3,12 +3,12 @@ import HeroImg from '../assets/Hero-img.png'
 
 export default function HeroSection() {
     return (
-        <section className=" w-screen hero flex flex-col justify-center items-center gap-5 md:gap-6 px-5 sm:px-8">
-            <h1 className="hero__header max-w-[820px] text-[2.8rem] sm:text-6xl md:text-[5rem] text-center leading-[1.05]">
+        <section className="h-screen hero flex flex-col justify-center items-center gap-5 md:gap-6 my-10 md:my-30 px-5 sm:px-8 md:mt-40">
+            <h1 className="hero__header max-w-205 text-[2.8rem] sm:text-6xl md:text-[5rem] text-center leading-[1.05]">
                 Your <span className="italic font-extralight">inventory. Your space.</span> Your control.
             </h1>
 
-            <p className="hero__text max-w-[720px] text-center text-text-muted text-base px-2">
+            <p className="hero__text max-w-180 text-center text-text-muted text-[14px] px-2 sm:text-sm">
                 STox helps you organize your products, track accurate stock quantities,
                 and stay in complete control of warehouse flow all in one calm,
                 structured space.
@@ -30,7 +30,7 @@ export default function HeroSection() {
                 </a>
             </div>
 
-            <div className="hero__img max-w-[820px]">
+            <div className="hero__img max-w-205">
                 <img
                     src={HeroImg}
                     alt="3D Modular Storage Visual Box Component"

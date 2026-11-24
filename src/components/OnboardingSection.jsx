@@ -21,8 +21,8 @@ const steps = [
 
 export default function OnboardingSection() {
     return (
-        <section id="how-it-works" className="onboarding__steps mt-16 md:mt-30 px-4">
-            <div className="text-center">
+        <section id="how-it-works" className="onboarding__steps px-4">
+            <div className="flex flex-col items-center gap-3 text-center">
                 <span className="text-primary-dark font-(--font-heading) text-sm">SIMPLE ONBOARDING</span>
                 <h2 className="text-[2rem]">Get your inventory organised in three simple steps.</h2>
                 <span className="text-base text-text-muted">
@@ -30,7 +30,7 @@ export default function OnboardingSection() {
                 </span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 md:mt-20 mb-12 md:mb-20 md:px-8 lg:px-16">
+            <div className="mt-10 grid grid-cols-1 gap-4 md:mt-14 md:grid-cols-3 md:px-8 lg:px-16">
                 {steps.map((step) => (
                     <div key={step.number} className="h-full flex flex-col gap-4 md:gap-6 bg-surface p-5 rounded-3xl border border-border-muted">
                         <span className="text-3xl text-background-main font-heading">{step.number}</span>
