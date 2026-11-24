@@ -3,7 +3,7 @@ import HeroImg from '../assets/Hero-img.png'
 
 export default function HeroSection() {
     return (
-        <section className=" w-screen hero flex flex-col justify-center items-center gap-5 md:gap-6 my-10 md:my-30 px-5 sm:px-8 md:mt-30">
+        <section className=" w-screen hero flex flex-col justify-center items-center gap-5 md:gap-6 px-5 sm:px-8">
             <h1 className="hero__header max-w-[820px] text-[2.8rem] sm:text-6xl md:text-[5rem] text-center leading-[1.05]">
                 Your <span className="italic font-extralight">inventory. Your space.</span> Your control.
             </h1>
