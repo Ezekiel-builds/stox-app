@@ -18,6 +18,7 @@
   --color-surface: #FFFFFF;
   --color-surface-muted: #F0F0EB;
   --color-surface-grey: #FAF8F5;
+  --color-surface-dark: #111110;
   --color-numbers-background: rgba(220, 235, 226, 0.6);
   --color-box-surface: rgba(255, 251, 235, 0.7);
 
@@ -37,6 +38,7 @@
   --color-border: #E5E5DF;
   --color-border-muted: rgba(229, 227, 220, 0.8);
   --color-border-box: rgba(253, 230, 138, 0.8);
+  --color-footer: rgba(38, 38, 36, 60%);
 
   /* Status */
   --color-success: #16A34A;
@@ -57,7 +59,8 @@
 
 body {
   background-color: var(--color-background);
-  font-family: var(--font-body)
+  font-family: var(--font-body);
+  overflow-x: hidden;
 }
 
 .hero__header {
@@ -68,7 +71,7 @@ body {
 }
 
 span {
-  font-family: var(--font-body);
+ /*  font-family: var(--font-body); */
   font-optical-sizing: none;
   font-variation-settings: "opsz" 72, "SOFT" 0, "WONK" 1;
 }
@@ -78,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
   /* font-weight: 400; */
   font-optical-sizing: none;
   font-variation-settings: "opsz" 72, "SOFT" 0, "WONK" 1;
-  color: var(--color-text);
+  
 }
 
 .feature__eyebrow {

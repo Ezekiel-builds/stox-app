@@ -5,6 +5,8 @@ import FeaturesSection from './FeaturesSection'
 import TransformationSection from './TransformationSection'
 import OnboardingSection from './OnboardingSection'
 import Preview from './Preview'
+import Faq from './Faq'
+import Footer from './Footer'
 
 export default function Main() {
     return (
@@ -16,6 +18,8 @@ export default function Main() {
             <TransformationSection />
             <OnboardingSection />
             <Preview />
+            <Faq/>
+            <Footer/>
         </main>
     )
 }

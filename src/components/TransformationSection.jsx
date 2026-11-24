@@ -14,8 +14,8 @@ const afterItems = [
 
 export default function TransformationSection() {
     return (
-        <section className="transformation mt-30 bg-surface">
-            <div className="text-center p-12">
+        <section className="transformation mt-16 md:mt-30 bg-surface">
+            <div className="text-center p-6 md:p-12">
                 <span className="text-sm text-primary-dark">
                     THE TRANSORMATION
                 </span>
@@ -25,36 +25,36 @@ export default function TransformationSection() {
                 </h2>
             </div>
 
-            <div className="flex justify-evenly pb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 px-4 md:px-10 pb-12 md:pb-20">
                 
-                    <div className="bg-surface-grey p-5 rounded-3xl overflow-hidden">
+                    <div className="bg-surface-grey p-4 md:p-5 rounded-3xl overflow-hidden border border-border-muted">
                         <span className="text-sm bg-primary-label border border-[#FECDD3] text-[#BE123C] font-medium px-2 py-1 rounded-[999px]">BEFORE STOX</span>
                         <h4 className="text-[1.5rem] my-3">Scattered records & nervous guesswork</h4>
 
-                        <div className="flex flex-col gap-12">
+                        <div className="flex flex-col gap-6 md:gap-12">
                             {beforeItems.map((item, index) => (
                                 <div key={index} className="flex gap-3">
-                                    <span className="w-6 h-6 text-[#E11D48] text-center relative top-1 text-[12px] bg-[#FFE4E6] p-1 rounded-[50%]"><i className="fi fi-rr-x"></i></span>
+                                    <span className="w-4 h-4 text-[#E11D48] text-center relative top-1 text-[8px] bg-[#FFE4E6] p-1 rounded-[50%]"><i className="fi fi-rr-x"></i></span>
                                     <p className="max-w-115">{item}</p>
                                 </div>
                             ))}
                         </div>
-                        <i className="relative bottom-107 left-116 z-0 text-[4rem] fi fi-rr-x text-label-muted"></i>
+                        <i className="hidden md:block relative bottom-107 left-116 z-0 text-[4rem] fi fi-rr-x text-label-muted"></i>
                     </div>
 
-                    <div className="bg-surface-grey p-5 rounded-3xl overflow-hidden">
+                    <div className="bg-surface-grey p-4 md:p-5 rounded-3xl overflow-hidden border border-border-muted">
                         <span className="text-sm bg-secondary-label border border-[#6EE7B7] text-numbers font-medium px-2 py-1 rounded-[999px]">AFTER STOX</span>
                         <h4 className="text-[1.5rem] my-3">One cohesive, peaceful inventory space</h4>
 
-                        <div className="flex flex-col gap-12"> 
+                        <div className="flex flex-col gap-6 md:gap-12"> 
                             {afterItems.map((item, index) => (
                                 <div key={index} className="flex gap-3">
-                                    <span className="w-6 h-6 text-surface text-center relative top-1 text-[12px] bg-[#10B981] p-1 rounded-[50%]"><i className="fi fi-rr-check"></i></span>
+                                    <span className="w-4 h-4 text-surface text-center relative top-1 text-[8px] bg-[#10B981] p-1 rounded-[50%]"><i className="fi fi-rr-check"></i></span>
                                     <p className="max-w-115">{item}</p>
                                 </div>
                             ))}
                         </div>
-                        <i className="relative bottom-107 left-116 z-0 text-[4rem] text-label-mute fi fi-rr-check"></i>
+                        <i className="hidden md:block relative bottom-107 left-116 z-0 text-[4rem] text-label-mute fi fi-rr-check"></i>
                     </div>
             </div>
         </section>
