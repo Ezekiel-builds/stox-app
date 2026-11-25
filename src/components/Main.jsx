@@ -12,7 +12,7 @@ export default function Main() {
     return (
         <main>
             <Header />
-            <div className="flex flex-col gap-20 md:gap-30">
+            <div className="flex flex-col gap-20 md:gap-24 lg:gap-30">
                 <HeroSection />
                 <PhilosophySection />
                 <FeaturesSection />

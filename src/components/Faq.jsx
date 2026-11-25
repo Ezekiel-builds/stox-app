@@ -42,7 +42,7 @@ export default function Faq() {
 
             <div className="mb-10 flex flex-col items-center gap-3 text-center md:mb-14">
                 <span className="text-xs md:text-sm text-primary-dark font-(--font-heading)">FREQUENTLY ASKED QUESTIONS</span>
-                <h2 className="text-[1.6rem] md:text-[2rem]text-[2rem]">Everything you need to know.</h2>
+                <h2 className="text-[1.6rem] md:text-[2rem]">Everything you need to know.</h2>
                 <span className="text-base text-text-muted">
                     Clear answers for small business owners seeking calm inventory management.
                 </span>

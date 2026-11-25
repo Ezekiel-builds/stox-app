@@ -3,7 +3,7 @@ const features = [
         id: '01',
         title: 'Product organization',
         description: 'Keep product information organized in one place.',
-        cardStyle: "md:col-span-2",
+        cardStyle: "lg:col-span-2",
         preview: (
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center p-2 bg-background border border-background-main rounded-2xl">
                 <div className="bg-surface px-3 sm:px-4 py-2 border border-background-main rounded-2xl">
@@ -113,7 +113,7 @@ export default function FeaturesSection() {
                 <span className="text-(--color-text-muted) text-base">One organised space to manage every product you sell.</span>
             </div>
 
-            <div className="features__cards grid grid-cols-1 md:grid-cols-3 gap-4 px-4 md:px-6 mt-12">
+            <div className="features__cards mt-12 grid grid-cols-1 gap-4 px-4 md:grid-cols-2 md:px-6 lg:grid-cols-3">
                 {features.map((feature) => (
                     <FeatureCard key={feature.id} feature={feature} />
                 ))}

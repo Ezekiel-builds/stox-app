@@ -3,8 +3,8 @@ import HeroImg from '../assets/Hero-img.png'
 
 export default function HeroSection() {
     return (
-        <section className="h-screen hero flex flex-col justify-center items-center gap-5 md:gap-6 my-10 md:my-30 px-5 sm:px-8 md:mt-40">
-            <h1 className="hero__header max-w-205 text-[2.8rem] sm:text-6xl md:text-[5rem] text-center leading-[1.05]">
+        <section className="hero flex min-h-[calc(100svh-5rem)] flex-col items-center justify-center gap-5 px-5 sm:px-8 md:min-h-[72vh] md:gap-6 lg:min-h-screen">
+            <h1 className="hero__header max-w-205 text-center text-[2.8rem] leading-[1.05] sm:text-6xl lg:text-[5rem]">
                 Your <span className="italic font-extralight">inventory. Your space.</span> Your control.
             </h1>
 
