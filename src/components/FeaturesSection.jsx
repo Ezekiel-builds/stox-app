@@ -108,8 +108,8 @@ export default function FeaturesSection() {
     return (
         <section id="features" className="features flex justify-center flex-col">
             <div className="features__header flex flex-col gap-3 px-5 text-center md:text-left">
-                <span className="text-sm text-primary-dark">CORE PLATFORM FEATURES</span>
-                <h2 className="text-3xl md:text-[2.5rem] text-text leading-tight">Everything your inventory needs.</h2>
+                <span className="text-xs md:text-sm text-primary-dark">CORE PLATFORM FEATURES</span>
+                <h2 className="text-[1.5rem] md:text-[2.5rem] text-text leading-tight">Everything your inventory needs.</h2>
                 <span className="text-(--color-text-muted) text-base">One organised space to manage every product you sell.</span>
             </div>
 

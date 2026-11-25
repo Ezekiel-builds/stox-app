@@ -16,11 +16,11 @@ export default function TransformationSection() {
     return (
         <section className="transformation bg-surface">
             <div className="flex flex-col items-center gap-3 px-4 py-10 text-center md:px-12 md:py-16">
-                <span className="text-sm text-primary-dark">
+                <span className="text-xs md:text-sm text-primary-dark">
                     THE TRANSORMATION
                 </span>
 
-                <h2 className="text-[2rem]">
+                <h2 className="text-[1.5rem] md:text-[2.5rem]">
                     From notebook chaos to mathematical calm.
                 </h2>
             </div>

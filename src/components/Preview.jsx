@@ -4,11 +4,11 @@ export default function Preview() {
     return (
         <div id="system-preview" className="flex flex-col items-center justify-center gap-10 bg-surface px-4 py-20 md:gap-16">
             <div className="flex flex-col items-center gap-3 text-center">
-                <span className="text-primary-dark font-(--font-heading) text-sm">
+                <span className="text-xs md:text-sm text-primary-dark font-(--font-heading)">
                     SYSTEM PREVIEW
                 </span>
 
-                <h2 className="text-[2rem] text-text">
+                <h2 className="text-[1.5rem] md:text-[2rem] text-text">
                     Designed for absolute clarity.
                 </h2>
 

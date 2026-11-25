@@ -41,8 +41,8 @@ export default function Faq() {
         <div id="FAQ" className="px-4 md:px-16">
 
             <div className="mb-10 flex flex-col items-center gap-3 text-center md:mb-14">
-                <span className="text-primary-dark font-(--font-heading) text-sm">FREQUENTLY ASKED QUESTIONS</span>
-                <h2 className="text-[2rem]">Everything you need to know.</h2>
+                <span className="text-xs md:text-sm text-primary-dark font-(--font-heading)">FREQUENTLY ASKED QUESTIONS</span>
+                <h2 className="text-[1.6rem] md:text-[2rem]text-[2rem]">Everything you need to know.</h2>
                 <span className="text-base text-text-muted">
                     Clear answers for small business owners seeking calm inventory management.
                 </span>
@@ -60,7 +60,7 @@ export default function Faq() {
                     <h4 className="text-lg leading-snug">{faq.question}</h4>
                     <i
                       /*   aria-hidden="true" */
-                        className={`fi fi-rr-plus-small shrink-0 transition-transform ${isOpenIndex === faq.id ? 'rotate-45' : ''} bg-[#151515] text-surface w-8 h-8 flex items-center justify-center rounded-full`}
+                        className={`fi fi-rr-plus-small shrink-0 transition-transform ${isOpenIndex === faq.id ? 'rotate-45 bg-text text-surface' : 'bg-background text-text'} w-8 h-8 flex items-center justify-center rounded-full`}
                     ></i>
                 </button>
 

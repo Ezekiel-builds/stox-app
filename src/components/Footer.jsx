@@ -8,9 +8,9 @@ export default function Footer() {
     <section className="overflow-hidden bg-surface-dark text-surface">
       {/* Top CTA Block */}
       <div className="flex flex-col items-center gap-4 px-5 py-16 sm:gap-5 sm:px-8 sm:py-20 lg:py-30">
-            <span className="text-xs text-text-muted">AN ATELIER OF PURE ORDER</span>
+            <span className="text-xs md:text-sm text-text-muted">AN ATELIER OF PURE ORDER</span>
 
-            <h2 className="max-w-3xl text-center text-2xl leading-tight text-[#FAF8F5] sm:text-3xl md:text-4xl">
+            <h2 className="max-w-3xl text-center text-[1.5rem] md:text-[2.5rem] leading-tight text-[#FAF8F5] sm:text-3xl md:text-4xl">
             Every object accounted for. <span className="italic">Every shelf</span> in calm.
             </h2>
 

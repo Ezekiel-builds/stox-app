@@ -23,8 +23,8 @@ export default function OnboardingSection() {
     return (
         <section id="how-it-works" className="onboarding__steps px-4">
             <div className="flex flex-col items-center gap-3 text-center">
-                <span className="text-primary-dark font-(--font-heading) text-sm">SIMPLE ONBOARDING</span>
-                <h2 className="text-[2rem]">Get your inventory organised in three simple steps.</h2>
+                <span className="text-xs md:text-sm text-primary-dark font-(--font-heading)">SIMPLE ONBOARDING</span>
+                <h2 className="text-[1.5rem] md:text-[2.5rem]">Get your inventory organised in three simple steps.</h2>
                 <span className="text-base text-text-muted">
                     A glimpse into the daily cockpit that keeps hundreds of boutique retailers organized.
                 </span>
