@@ -5,12 +5,16 @@ export default function Header() {
     return (
         <header className="flex justify-between md:justify-evenly items-center p-3 bg-surface mx-4 md:mx-20 my-5 rounded-[999px] border-2 border-border-muted">
             <div className="w-8 md:w-10 shrink-0">
-                <Link to="/" >
+                <Link to="/" className="flex items-center gap-2">
                     <img 
                     src={StoxLogo} 
                     alt="Stox Logo"
-                    className="w-full object-contain bg-[#151515] "
+                    className="w-full object-contain bg-text rounded-lg"
                     />
+
+                    <div className="text-2xl font-bold">
+                        ST<span className="text-[#10B981]">oX</span>
+                    </div>
                 </Link>
 
             </div>
