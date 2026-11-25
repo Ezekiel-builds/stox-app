@@ -40,7 +40,7 @@ export default function OnboardingSection() {
                             <span className="text-text-muted">{step.description}</span>
                         </div>
 
-                        <span className="py-2 border-t border-background-main text-[0.8rem] text-[#065F46] font-bold">{step.note}</span>
+                        <span className="py-2 border-t border-background-main text-[0.8rem] text-numbers font-bold">{step.note}</span>
                     </div>
                 ))}
             </div>

@@ -9,7 +9,7 @@ export default function Header() {
                     <img 
                     src={StoxLogo} 
                     alt="Stox Logo"
-                    className="w-full object-contain bg-text rounded-lg"
+                    className="object-contain bg-text rounded-lg"
                     />
 
                     <div className="text-2xl font-bold">
