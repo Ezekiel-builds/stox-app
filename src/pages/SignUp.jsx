@@ -42,7 +42,7 @@ export default function SignUp() {
         </div>
 
         {/* Center Form Container */}
-        <div className="mx-auto my-12 w-full max-w-[400px]">
+        <div className="mx-auto my-20 w-full max-w-100">
           <div className="mb-8">
             <h1
               className="text-4xl leading-[1.12] tracking-tight text-[#151515] sm:text-[42px]"
