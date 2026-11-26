@@ -55,6 +55,18 @@
   --color-secondary-label: #D1FAE5;
   --color-label-muted: rgba(12, 12, 12, 3%);
   --color-label-mute: rgba(16, 185, 129, 5%);
+
+  /* Animations */
+  --animate-soft-bounce: soft-bounce 2.2s ease-in-out infinite;
+
+  @keyframes soft-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
 }
 
 body {

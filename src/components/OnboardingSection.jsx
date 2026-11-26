@@ -32,8 +32,8 @@ export default function OnboardingSection() {
 
             <div className="mt-10 grid grid-cols-1 gap-4 md:mt-14 md:grid-cols-2 md:px-4 lg:grid-cols-3 lg:px-16">
                 {steps.map((step) => (
-                    <div key={step.number} className="h-full flex flex-col gap-4 md:gap-6 bg-surface p-5 rounded-3xl border border-border-muted">
-                        <span className="text-3xl text-background-main font-heading">{step.number}</span>
+                    <div key={step.number} className="group h-full flex flex-col gap-4 md:gap-6 bg-surface p-7 rounded-3xl border border-border-muted cursor-pointer transition duration-300 hover:-translate-y-1.5 hover:border-primary hover:shadow-hover">
+                        <span className="text-3xl text-background-main font-heading transition-all duration-300 group-hover:scale-109 group-hover:text-primary">{step.number}</span>
 
                         <div>
                             <h4 className="text-2xl font-bold">{step.title}</h4>
