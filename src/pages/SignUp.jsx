@@ -3,11 +3,33 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import StoxLogo from "../assets/Stox-logo.png";
 
+const BUSINESS_TYPES = [
+  "Fashion & Apparel",
+  "Beauty & Skincare",
+  "Home & Lifestyle",
+  "Food & Groceries",
+  "Electronics",
+  "Art & Studio Craft",
+  "Others",
+];
+
+const STOCK_LEVELS = [3, 5, 10];
+
 export default function SignUp() {
+  /* Step 1 fields */
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userId, setUserId] = useState("");
+
+  /* Step 2 fields */
+  const [businessName, setBusinessName] = useState("");
+  const [businessType, setBusinessType] = useState("Beauty & Skincare");
+  const [lowStockThreshold, setLowStockThreshold] = useState(5);
+
   const [status, setStatus] = useState("");
-  const [process, setProcess] = useState(1);
+  const [submitting, setSubmitting] = useState(false);
+
+  const [step, setStep] = useState(1);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -24,20 +46,40 @@ export default function SignUp() {
     }
 
     console.log("Vault Created.", data.user);
-    setStatus("User added!")
+    setUserId(data.user?.id ?? null);
+    setSubmitting(true)
+    setStatus("User added!");
+    setStep(2)
+  }
+
+  async function handleProile(e) {
+    e.preventDefault();
+
+    const {error} = await supabase.from("profiles").insert({
+      id: userId,
+      business_name: businessName,
+      business_type: businessType,
+      low_stock_threshold: lowStockThreshold,
+    });
+
+    if(error) {
+      console.log(`Error: ${error.message}`)
+    }
+
+    console.log("Profile Created!")
   }
 
   return (
-    <section className="flex min-h-screen w-full bg-background text-[#151515]">
+    <section className="flex min-h-screen w-full bg-background text-text">
       {/* LEFT COLUMN: Top Nav + Onboarding Form */}
       <div className="flex w-full flex-col justify-between px-6 py-8 sm:px-12 lg:w-[55%] lg:px-16 lg:py-11">
         {/* Top Bar */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between  border-b border-border-muted p-4">
           <Link to="/" className="flex items-center gap-2.5">
             <img
               src={StoxLogo}
               alt="Stox Logo"
-              className="h-8 w-8 rounded-lg bg-[#151515] object-contain"
+              className="h-8 w-8 rounded-lg bg-text object-contain"
             />
             <span className="text-xl font-bold tracking-tight">
               ST<span className="text-[#10B981]">oX</span>
@@ -50,7 +92,7 @@ export default function SignUp() {
             </span>
             <Link
               to="/login"
-              className="font-medium text-[#151515] underline-offset-4 hover:underline"
+              className="font-medium text-text underline-offset-4 hover:underline"
             >
               Sign in
             </Link>
@@ -58,10 +100,11 @@ export default function SignUp() {
         </div>
 
         {/* Center Form Container */}
+        {step === 1 ?(
         <div className="mx-auto my-20 w-full max-w-100">
           <div className="mb-8">
             <h1
-              className="text-4xl leading-[1.12] tracking-tight text-[#151515] sm:text-[42px]"
+              className="text-4xl leading-[1.12] tracking-tight text-text sm:text-[42px]"
               style={{
                 fontFamily: "'Instrument Serif', 'Fraunces', Georgia, serif",
               }}
@@ -76,7 +119,7 @@ export default function SignUp() {
           {/* Google OAuth Button */}
           <button
             type="button"
-            className="flex w-full items-center justify-center gap-2.5 rounded-full border border-[#E2E0D8] bg-white px-5 py-3 text-sm font-medium text-[#151515] transition-colors hover:border-[#151515]"
+            className="flex w-full items-center justify-center gap-2.5 rounded-full border border-[#E2E0D8] bg-white px-5 py-3 text-sm font-medium text-text transition-colors hover:border-text"
           >
             <svg className="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -101,15 +144,15 @@ export default function SignUp() {
 
           {/* Editorial Divider */}
           <div className="my-6 flex items-center gap-3">
-            <div className="h-[1px] flex-1 bg-[#E5E3DA]" />
+            <div className="h-px flex-1 bg-[#E5E3DA]" />
             <span className="text-[11px] tracking-wider text-[#888888] uppercase">
               or register with email
             </span>
-            <div className="h-[1px] flex-1 bg-[#E5E3DA]" />
+            <div className="h-px flex-1 bg-[#E5E3DA]" />
           </div>
 
           {/* Email & Password Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
+             <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label
                 htmlFor="email"
@@ -124,7 +167,8 @@ export default function SignUp() {
                 placeholder="ella@ateliercraft.co"
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="mt-2 w-full rounded-xl border border-[#E2E0D8] bg-white px-4 py-3 text-sm text-[#151515] placeholder-[#A3A3A3] transition-colors focus:border-[#151515] focus:outline-none"
+                className="mt-2 w-full rounded-xl border border-[#E2E0D8] bg-white px-4 py-3 text-sm text-text placeholder-text-light transition-colors focus:border-text focus:outline-none"
+
               />
             </div>
 
@@ -142,20 +186,149 @@ export default function SignUp() {
                 placeholder="•••••••••"
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="mt-2 w-full rounded-xl border border-[#E2E0D8] bg-white px-4 py-3 text-sm text-[#151515] placeholder-[#A3A3A3] transition-colors focus:border-[#151515] focus:outline-none"
+                className="mt-2 w-full rounded-xl border border-[#E2E0D8] bg-white px-4 py-3 text-sm text-text placeholder-text-light transition-colors focus:border-text focus:outline-none"
+
               />
             </div>
 
             <button
               type="submit"
-              className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-[#151515] px-6 py-3.5 text-sm font-medium text-[#F7F6F2] transition-colors hover:bg-[#262626]"
+              className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-text px-6 py-3.5 text-sm font-medium text-background transition-colors hover:bg-[#262626]"
             >
               <span>Continue</span>
               <i className="fi fi-rr-arrow-right text-xs" />
             </button>
-          </form>
+          </form> 
         </div>
+        ) : (
+         <div className="mx-auto my-20 w-full max-w-115">
+            {/* Step Pill */}
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#E3EDE7] px-3.5 py-1.5 text-xs font-medium text-[#1F3A2E]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]" />
+              Step 02 • Store Architecture
+            </div>
 
+            {/* Title */}
+            <div className="mb-8">
+              <h1
+                className="text-4xl leading-[1.12] tracking-tight text-text sm:text-[42px]"
+                style={{
+                  fontFamily: "'Instrument Serif', 'Fraunces', Georgia, serif",
+                }}
+              >
+                Name your store.
+              </h1>
+              <p className="mt-2.5 text-sm text-[#777777]">
+                We'll tailor your space around what you sell.
+              </p>
+            </div>
+
+            {/* Store Architecture Form */}
+            <form onSubmit={handleProile} className="space-y-6">
+              {/* Store Name */}
+              <div>
+                <label
+                  htmlFor="businessName"
+                  className="block text-[10px] font-semibold tracking-[0.16em] text-[#555555] uppercase"
+                >
+                  Store or Business Name
+                </label>
+                <input
+                  id="businessName"
+                  type="text"
+                  value={businessName}
+                  placeholder="Atelier Craft Co."
+                  onChange={(e) => setBusinessName(e.target.value)}
+                  className="mt-2 w-full rounded-xl border border-[#E2E0D8] bg-white px-4 py-3 text-sm text-text placeholder-text-light transition-colors focus:border-text focus:outline-none"
+                />
+              </div>
+
+              {/* Business Type */}
+              <div>
+                <label className="block text-[10px] font-semibold tracking-[0.16em] text-[#555555] uppercase">
+                  Type of Business
+                </label>
+
+                <div className="mt-2.5 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+                  {BUSINESS_TYPES.map((type) => (
+                    <button
+                      key={type}
+                      type="button"
+                      onClick={() => setBusinessType(type)}
+                      className={`flex items-center justify-between rounded-xl border px-3.5 py-2.5 text-left text-xs font-medium transition-colors ${
+                        businessType === type
+                          ? "border-[#10B981]/60 bg-[#E3EDE7]/80 text-[#1F3A2E]"
+                          : "border-[#E2E0D8] bg-white text-[#555555] hover:border-text"
+                      }`}
+                    >
+                      <span className="truncate">{type}</span>
+                      {businessType === type && (
+                        <span className="ml-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#10B981]" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Low-Stock Alert */}
+              <div>
+                <div className="flex items-center justify-between">
+                  <label className="text-[10px] font-semibold tracking-[0.16em] text-[#555555] uppercase">
+                    Low-Stock Notification
+                  </label>
+
+                  <span className="text-[11px] text-[#888888]">
+                    Notify me when stock drops to
+                  </span>
+                </div>
+
+                <div className="mt-2.5 grid grid-cols-3 gap-2.5">
+                  {STOCK_LEVELS.map((num) => (
+                    <button
+                      key={num}
+                      type="button"
+                      onClick={() => setLowStockThreshold(num)}
+                      className={`rounded-xl border px-4 py-2.5 text-xs font-medium transition-colors ${
+                        lowStockThreshold === num
+                          ? "border-[#10B981]/60 bg-[#E3EDE7]/80 text-[#1F3A2E]"
+                          : "border-[#E2E0D8] bg-white text-[#555555] hover:border-text"
+                      }`}
+                    >
+                      {num} units
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {status && (
+                <p className="text-xs font-medium text-red-600">{status}</p>
+              )}
+
+              {/* Bottom Actions */}
+              <div className="flex items-center justify-between pt-3">
+                <div className="flex items-center gap-4">
+                  <button
+                    type="button"
+                    onClick={() => setStep(1)}
+                    className="flex items-center gap-1.5 text-xs font-medium text-[#777777] transition-colors hover:text-text"
+                  >
+                    <i className="fi fi-rr-arrow-left text-xs" />
+                    <span>Back</span>
+                  </button>
+                </div>
+
+                <button
+                  type="submit"
+                  className="flex items-center gap-2 rounded-full bg-text px-7 py-3.5 text-sm font-medium text-background transition-colors hover:bg-[#262626]"
+                >
+                  <span>{ submitting ? "Entering space..." : "Enter STox Space" }</span>
+                  <i className="fi fi-rr-arrow-right text-xs" />
+                </button>
+              </div>
+            </form>
+          </div>
+        )}
+        
         {/* Bottom Subtle Footer */}
         <p className="text-[11px] text-[#888888]">
           © {new Date().getFullYear()} STox. All rights reserved.
@@ -163,11 +336,12 @@ export default function SignUp() {
       </div>
 
       {/* RIGHT COLUMN: Architectural Box Illustration (Hidden on Mobile/Tablet, Shown on Desktop) */}
-      <aside className="hidden min-h-screen flex-col justify-between border-l border-[#E6E3DA] bg-[#F4F2EC] px-10 py-11 text-[#151515] select-none lg:flex lg:w-[45%] xl:px-14">
+      <aside className="hidden min-h-screen flex-col justify-between border-l border-[#E6E3DA] bg-[#F4F2EC] px-10 py-11 text-text select-none lg:flex lg:w-[45%] xl:px-14">
         {/* Top Meta Header */}
         <header className="flex items-center justify-between text-[11px] tracking-[0.18em] text-[#777777]">
           <span className="font-mono uppercase">
-            ARCHIVE TIER <span className="mx-1 text-[#A3A3A3]">•</span> SEC. 04
+            ARCHIVE TIER <span className="mx-1 text-text-light">•</span> SEC. 04
+
           </span>
 
           <div className="flex items-center gap-2 tracking-normal text-[#666666]">
@@ -178,7 +352,7 @@ export default function SignUp() {
 
         {/* Center Architectural Box Stack Illustration */}
         <div className="my-10 flex items-center justify-center">
-          <div className="relative flex w-full max-w-[360px] flex-col items-center rounded-[28px] bg-gradient-to-b from-[#FAF9F6]/90 to-[#ECEAE2]/50 px-6 py-10">
+          <div className="relative flex w-full max-w-90 flex-col items-center rounded-[28px] bg-linear-to-b from-[#FAF9F6]/90 to-[#ECEAE2]/50 px-6 py-10">
             <div className="pointer-events-none absolute inset-y-8 left-11 border-l border-dashed border-[#DFDDD4]" />
             <div className="pointer-events-none absolute inset-y-8 right-11 border-r border-dashed border-[#DFDDD4]" />
             <div className="pointer-events-none absolute top-[57%] right-7 left-7 border-t border-[#E5E3DA]" />
@@ -220,10 +394,10 @@ export default function SignUp() {
             </div>
 
             {/* 2. Middle Soft-Sage Box */}
-            <div className="relative z-20 mt-2.5 mr-7 w-44.5 overflow-hidden rounded-xl border-[1.5px] border-[#151515] bg-[#DCEBE2]">
+            <div className="relative z-20 mt-2.5 mr-7 w-44.5 overflow-hidden rounded-xl border-[1.5px] border-text bg-primary-light">
               <div className="h-4 border-b border-text/20" />
               <div className="flex h-13.5 items-center justify-between px-4">
-                <span className="rounded bg-white px-2.5 py-1 text-[8px] font-semibold tracking-[0.12em] text-[#151515] uppercase shadow-[0_1px_0_rgba(0,0,0,0.04)]">
+                <span className="rounded bg-white px-2.5 py-1 text-[8px] font-semibold tracking-[0.12em] text-text uppercase shadow-[0_1px_0_rgba(0,0,0,0.04)]">
                   BATCH #804
                 </span>
                 <span className="h-2.5 w-2.5 rounded-full bg-[#10B981]" />
@@ -231,7 +405,7 @@ export default function SignUp() {
             </div>
 
             {/* 3. Bottom Crisp White Box */}
-            <div className="relative z-10 mt-2.5 w-65.5 overflow-hidden rounded-xl border-[1.5px] border-[#151515] bg-white">
+            <div className="relative z-10 mt-2.5 w-65.5 overflow-hidden rounded-xl border-[1.5px] border-text bg-white">
               <div className="h-6 border-b border-[#E8E6DF]" />
               <div className="px-5 pt-4 pb-5">
                 <div className="flex items-center justify-between">
@@ -261,7 +435,7 @@ export default function SignUp() {
         {/* Bottom Editorial Quote */}
         <footer className="border-t border-[#E6E3DA] pt-6">
           <blockquote
-            className="text-[26px] leading-[1.2] italic tracking-tight text-[#151515] xl:text-[30px]"
+            className="text-[26px] leading-[1.2] italic tracking-tight text-text xl:text-[30px]"
             style={{
               fontFamily: "'Instrument Serif', 'Fraunces', Georgia, serif",
             }}
@@ -275,7 +449,7 @@ export default function SignUp() {
         </footer>
       </aside>
 
-      {if(process)}
+ 
     </section>
   );
 }
