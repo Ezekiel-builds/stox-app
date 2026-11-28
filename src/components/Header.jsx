@@ -39,7 +39,7 @@ export default function Header() {
             <nav
                 id="primary-navigation"
                 aria-label="Main navigation"
-                className={`${isMenuOpen ? 'flex' : 'hidden'} order-3 mt-3 w-full flex-col gap-2 border-t border-border-muted pt-3 text-text lg:order-none lg:mt-0 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-5 lg:border-0 lg:pt-0 lg:text-neutral`}
+                className={`${isMenuOpen ? 'flex' : 'hidden'} order-3 mt-3 w-full flex-col gap-2 border-t border-border-muted pt-3 text-text lg:order-0 lg:mt-0 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-5 lg:border-0 lg:pt-0 lg:text-neutral`}
             >
                 <a className="rounded-lg px-3 py-2 lg:px-0 lg:py-0" href="#features" onClick={() => setIsMenuOpen(false)}>Features</a>
                 <a className="rounded-lg px-3 py-2 lg:px-0 lg:py-0" href="#how-it-works" onClick={() => setIsMenuOpen(false)}>How It Works</a>

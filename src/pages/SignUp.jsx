@@ -1,3 +1,4 @@
+import { supabase } from "../../SupabaseClient";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import StoxLogo from "../assets/Stox-logo.png";
@@ -5,14 +6,29 @@ import StoxLogo from "../assets/Stox-logo.png";
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [status, setStatus] = useState("");
+  const [process, setProcess] = useState(1);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     console.log({ email, password });
+    setStatus("");
+
+    const {data, error} = await supabase.auth.signUp({
+      email,
+      password
+    });
+
+    if(error) {
+      setStatus(`Error: ${error.message}`)
+    }
+
+    console.log("Vault Created.", data.user);
+    setStatus("User added!")
   }
 
   return (
-    <section className="flex min-h-screen w-full bg-[#F7F6F2] text-[#151515]">
+    <section className="flex min-h-screen w-full bg-background text-[#151515]">
       {/* LEFT COLUMN: Top Nav + Onboarding Form */}
       <div className="flex w-full flex-col justify-between px-6 py-8 sm:px-12 lg:w-[55%] lg:px-16 lg:py-11">
         {/* Top Bar */}
@@ -258,6 +274,8 @@ export default function SignUp() {
           </p>
         </footer>
       </aside>
+
+      {if(process)}
     </section>
   );
 }

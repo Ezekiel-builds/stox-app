@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 export default function HeroSection() {
   return (
     <section className="hero flex min-h-[calc(100svh-5rem)] flex-col items-center justify-center gap-5 px-5 font-body text-text sm:px-8 md:min-h-[72vh] md:gap-6 lg:min-h-screen">
-      <h1 className="hero__header mt-12 max-w-205 text-center font-heading text-[2.8rem] leading-[1.05] sm:text-6xl md:mt-20 lg:text-[5rem]">
+      <h1 className="hero__header mt-12 max-w-205 text-center font-heading text-[2.8rem] leading-[1.05] sm:text-6xl md:mt-20 lg:text-[5rem]" data-aos="fade-up">
         Your <span className="font-extralight italic">inventory. Your space.</span>{" "}
         Your control.
       </h1>
 
-      <p className="hero__text max-w-180 px-2 text-center text-[14px] text-text-muted sm:text-sm">
+      <p className="hero__text max-w-180 px-2 text-center text-[14px] text-text-muted sm:text-sm" data-aos="fade-up" data-aos-delay="150">
         STox helps you organize your products, track accurate stock quantities,
         and stay in complete control of warehouse flow all in one calm,
         structured space.
       </p>
 
-      <div className="hero__btns my-4 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-8">
+      <div className="hero__btns my-4 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-8" data-aos="fade-up" data-aos-delay="1.55">
         <Link
           to="/signup"
           className="flex items-center justify-center gap-2 rounded-[999px] bg-text px-6 py-3 text-surface transition-opacity hover:opacity-90 sm:px-8"
@@ -32,7 +32,7 @@ export default function HeroSection() {
       </div>
 
       {/* Modular Storage Compartment Composition */}
-      <div className="hero__img relative mt-6 w-full max-w-5xl pt-6 pb-2 sm:pt-8 animate-soft-bounce">
+      <div className="hero__img relative mt-6 w-full max-w-5xl pt-6 pb-2 animate-hero-image-enter motion-reduce:animate-none sm:pt-8">
         {/* Top-Left Floating Item Callout */}
         <div className="relative z-20 mx-auto mb-3 flex w-fit -rotate-2 items-center gap-3 rounded-2xl border border-border bg-surface px-4 py-2.5 shadow-hover sm:absolute sm:top-0 sm:left-8 sm:mb-0">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-light font-mono text-xs font-bold text-numbers">
@@ -144,7 +144,7 @@ export default function HeroSection() {
             </div>
 
             {/* Compartment 02: Central Hub — Live Stock Velocity */}
-            <div className="flex flex-col justify-between rounded-2xl border border-surface-dark bg-gradient-to-br from-surface-dark via-surface-dark to-[#0A291F] p-6 text-left text-surface shadow-hover">
+            <div className="flex flex-col justify-between rounded-2xl border border-surface-dark bg-linear-to-br from-surface-dark via-surface-dark to-[#0A291F] p-6 text-left text-surface shadow-hover">
               <div>
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-mono text-[10px] font-semibold tracking-[0.14em] text-primary uppercase">

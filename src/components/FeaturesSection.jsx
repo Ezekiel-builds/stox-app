@@ -90,9 +90,9 @@ const features = [
     },
 ]
 
-function FeatureCard({ feature }) {
+function FeatureCard({ feature, index }) {
     return (
-        <div className={`feature__card flex flex-col gap-4 bg-surface px-4 md:px-5 py-5 md:py-3 ${feature.cardStyle} border  border-background-main rounded-3xl shadow-[0_1px_2px_rgba(0,0,0,0.5)] transition duration-200 cursor-pointer hover:-translate-y-1 hover:border hover:border-green-400`}>
+        <div data-aos="fade-up" data-aos-delay={index * 100} className={`feature__card flex flex-col gap-4 bg-surface px-4 md:px-5 py-5 md:py-3 ${feature.cardStyle} border  border-background-main rounded-3xl shadow-[0_1px_2px_rgba(0,0,0,0.5)] transition duration-200 cursor-pointer hover:-translate-y-1 hover:border hover:border-green-400`}>
             <div className="card__header flex items-center gap-2">
                 <span className="w-12 h-12 text-numbers text-[20px] bg-numbers-background p-4 rounded-2xl flex items-center justify-center">{feature.id}</span>
                 <h4 className="text-xl md:text-2xl font-bold">{feature.title}</h4>
@@ -114,8 +114,8 @@ export default function FeaturesSection() {
             </div>
 
             <div className="features__cards mt-12 grid grid-cols-1 gap-4 px-4 md:grid-cols-2 md:px-6 lg:grid-cols-3">
-                {features.map((feature) => (
-                    <FeatureCard key={feature.id} feature={feature} />
+                {features.map((feature, index) => (
+                    <FeatureCard key={feature.id} feature={feature} index={index} />
                 ))}
             </div>
         </section>

@@ -27,7 +27,7 @@ export default function TransformationSection() {
 
             <div className="grid grid-cols-1 gap-6 px-4 pb-12 md:gap-8 md:px-10 md:pb-20 lg:grid-cols-2">
                 
-                    <div className="bg-surface-grey p-4 md:p-5 rounded-3xl overflow-hidden border border-border-muted">
+                    <div data-aos="fade-up" className="bg-surface-grey p-4 md:p-5 rounded-3xl overflow-hidden border border-border-muted">
                         <span className="text-sm bg-primary-label border border-[#FECDD3] text-[#BE123C] font-medium px-2 py-1 rounded-[999px]">BEFORE STOX</span>
                         <h4 className="text-[1.5rem] my-3">Scattered records & nervous guesswork</h4>
 
@@ -42,7 +42,7 @@ export default function TransformationSection() {
                         <i className="hidden md:block relative bottom-107 left-116 z-0 text-[4rem] fi fi-rr-x text-label-muted"></i>
                     </div>
 
-                    <div className="bg-surface-grey p-4 md:p-5 rounded-3xl overflow-hidden border border-border-muted">
+                    <div data-aos="fade-up" data-aos-delay="150" className="bg-surface-grey p-4 md:p-5 rounded-3xl overflow-hidden border border-border-muted">
                         <span className="text-sm bg-secondary-label border border-[#6EE7B7] text-numbers font-medium px-2 py-1 rounded-[999px]">AFTER STOX</span>
                         <h4 className="text-[1.5rem] my-3">One cohesive, peaceful inventory space</h4>
 

@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <section className="overflow-hidden bg-surface-dark text-surface">
       {/* Top CTA Block */}
-      <div className="flex flex-col items-center gap-4 px-5 py-16 sm:gap-5 sm:px-8 sm:py-20 lg:py-30">
+      <div className="flex flex-col items-center gap-4 px-5 py-16 sm:gap-5 sm:px-8 sm:py-20 lg:py-30" data-aos="fade-up">
             <span className="text-xs md:text-sm text-text-muted">AN ATELIER OF PURE ORDER</span>
 
             <h2 className="max-w-3xl text-center text-[1.5rem] md:text-[2.5rem] leading-tight text-surface-grey sm:text-3xl md:text-4xl">
@@ -31,7 +31,7 @@ export default function Footer() {
 
       {/* Footer Brand & Newsletter */}
       <footer>
-        <div className="mx-auto mt-12 mb-12 grid max-w-7xl grid-cols-1 gap-10 px-5 sm:px-8 md:mt-16 md:mb-16 md:grid-cols-2 md:gap-12 lg:gap-24">
+        <div className="mx-auto mt-12 mb-12 grid max-w-7xl grid-cols-1 gap-10 px-5 sm:px-8 md:mt-16 md:mb-16 md:grid-cols-2 md:gap-12 lg:gap-24" data-aos="fade-up" data-aos-delay="120">
           {/* Left Column: Brand Info */}
           <div className="flex min-w-0 flex-col gap-4">
                 <div>

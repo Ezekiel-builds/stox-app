@@ -108,7 +108,7 @@ export default function Preview() {
       className="flex flex-col items-center justify-center gap-10 bg-surface px-4 py-20 font-body text-text md:gap-14"
     >
       {/* Section Header */}
-      <div className="flex max-w-2xl flex-col items-center gap-3 text-center">
+      <div className="flex max-w-2xl flex-col items-center gap-3 text-center" data-aos="fade-up">
         <span className="font-heading text-xs font-medium tracking-[0.18em] text-primary-dark uppercase md:text-sm">
           SYSTEM PREVIEW
         </span>
@@ -124,7 +124,7 @@ export default function Preview() {
       </div>
 
       {/* Cockpit Frame */}
-      <div className="w-full max-w-5xl overflow-hidden rounded-[26px] border border-border bg-background shadow-card">
+      <div className="w-full max-w-5xl overflow-hidden rounded-[26px] border border-border bg-background shadow-card" data-aos="zoom-in">
         {/* Top Window Bar */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-surface-grey px-6 py-4 sm:px-8">
           <div className="flex items-center gap-4">
@@ -226,7 +226,7 @@ export default function Preview() {
                   </div>
 
                   <div
-                    className={`my-4 h-[1px] w-full ${
+                    className={`my-4 h-px w-full ${
                       isWarning ? "bg-border-box" : "bg-surface-muted"
                     }`}
                   />
@@ -262,7 +262,7 @@ export default function Preview() {
             </div>
 
             <div className="overflow-x-auto">
-              <div className="min-w-[640px]">
+              <div className="min-w-160">
                 <div className="grid grid-cols-12 border-b border-border bg-surface-muted px-6 py-3 text-[10px] font-semibold tracking-[0.14em] text-text-muted uppercase">
                   <div className="col-span-5">PRODUCT NAME</div>
                   <div className="col-span-3">SKU CODE</div>

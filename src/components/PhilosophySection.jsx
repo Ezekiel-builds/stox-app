@@ -5,7 +5,7 @@ export default function PhilosophySection() {
                 THE STOX DESIGN PHILOSOPHY
             </span>
 
-            <h2 className="philosophy__text text-[1.5rem] md:text-[2.5rem] text-center">
+            <h2 className="philosophy__text text-[1.5rem] md:text-[2rem] text-center" data-aos="fade-up">
                 “Most inventory software is built like cold accounting spreadsheets. We built STox like an exquisitely crafted merchant workshop.”
             </h2>
         </section>
